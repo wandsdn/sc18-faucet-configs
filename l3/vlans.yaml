@@ -1,0 +1,225 @@
+---
+version: 2
+
+vlans:
+    bird:
+        description: 'bird peering'
+        vid: 4091
+        max_hosts: 10
+        faucet_mac: '0e:00:00:00:40:91'
+        bgp_routerid: '127.0.0.2'
+        bgp_as: 14031
+        bgp_neighbor_as: 14031
+        bgp_neighbor_addresses: ['127.0.0.1', '::1']
+        bgp_server_addresses: ['127.0.0.2', '::1']
+        bgp_port: 9179
+        bgp_connect_mode: 'passive'
+    noc-rtr-1:
+        description: 'noc-rtr-1 peering'
+        vid: 194
+        max_hosts: 10
+        faucet_mac: '0e:00:00:00:01:94'
+        faucet_vips:
+            - '192.0.2.3/29'
+            - '2001:db8:2::3/64'
+    noc-rtr-2:
+        description: 'noc-rtr-2 peering'
+        vid: 195
+        max_hosts: 10
+        faucet_mac: '0e:00:00:00:01:95'
+        faucet_vips:
+            - '192.0.2.11/29'
+            - '2001:db8:3::3/64'
+    227-A-l3:
+        description: 'Clemson University (Booth 227)'
+        vid: 284
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:02:84'
+        faucet_vips:
+            - '192.0.143.1/27'
+    927-A-l3:
+        description: 'Xilinx (Booth 927)'
+        vid: 405
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:04:05'
+        faucet_vips:
+            - '192.0.219.193/27'
+    1217-A-l3:
+        description: 'Georgia Institute of Technology (Booth 1217)'
+        vid: 324
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:03:24'
+        faucet_vips:
+            - '192.0.199.1/27'
+    1604-A-l3:
+        description: 'Google (Booth 1604)'
+        vid: 353
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:03:53'
+        faucet_vips:
+            - '192.0.213.1/27'
+            - '2001:db8:161::1/64'
+            - 'fe80::c00:ff:fe00:353/64'
+    1608-A-l3:
+        description: 'Penguin Computing (Booth 1608)'
+        vid: 298
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:02:98'
+        faucet_vips:
+            - '192.0.193.1/27'
+    1828-A-l3:
+        description: 'University of Utah (Booth 1828)'
+        vid: 315
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:03:15'
+        faucet_vips:
+            - '192.0.195.33/27'
+    2022-A-l3:
+        description: 'Arista Networks (Booth 2022)'
+        vid: 99
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:00:99'
+        faucet_vips:
+            - '192.0.222.1/27'
+    2413-A-l3:
+        description: 'Cray Inc. (Booth 2413)'
+        vid: 394
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:03:94'
+        faucet_vips:
+            - '192.0.209.33/27'
+    2429-A-l3:
+        description: 'HPE (Booth 2429)'
+        vid: 382
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:03:82'
+        faucet_vips:
+            - '192.0.217.193/27'
+    2433-A-l3:
+        description: 'Department of Energy (Booth 2433)'
+        vid: 308
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:03:08'
+        faucet_vips:
+            - '192.0.194.129/25'
+    2803-A-l3:
+        description: 'Cisco Systems (Booth 2803)'
+        vid: 383
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:03:83'
+        faucet_vips:
+            - '192.0.217.161/27'
+    2847-A-l3:
+        description: 'CIENA (Booth 2847)'
+        vid: 306
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:03:06'
+        faucet_vips:
+            - '192.0.193.225/27'
+    3025-A-l3:
+        description: 'Bright Computing (Booth 3025)'
+        vid: 330
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:03:30'
+        faucet_vips:
+            - '192.0.199.65/27'
+    3043-A-l3:
+        description: 'Corsa Technology (Booth 3043)'
+        vid: 312
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:03:12'
+        faucet_vips:
+            - '192.0.199.97/27'
+    3207-A-l3:
+        description: 'Mellanox Technologies (Booth 3207)'
+        vid: 54
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:00:54'
+        faucet_vips:
+            - '192.0.213.161/27'
+    3617-A-l3:
+        description: 'Lenovo (United States) Inc. (Booth 3617)'
+        vid: 331
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:03:31'
+        faucet_vips:
+            - '192.0.199.33/27'
+    3635-A-l3:
+        description: 'NCSA (Booth 3635)'
+        vid: 320
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:03:20'
+        faucet_vips:
+            - '192.0.197.129/25'
+            - '2001:db8:140::1/64'
+            - 'fe80::c00:ff:fe00:320/64'
+    3651-A-l3:
+        description: 'SCinet (Booth 3651)'
+        vid: 51
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:00:51'
+        faucet_vips:
+            - '192.0.131.1/27'
+    3707-A-l3:
+        description: 'Texas Advanced Computing Center (Booth 3707)'
+        vid: 38
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:00:38'
+        faucet_vips:
+            - '192.0.130.225/27'
+    4201-A-l3:
+        description: 'Globus (Booth 4201)'
+        vid: 184
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:01:84'
+        faucet_vips:
+            - '192.0.131.65/27'
+    4227-A-l3:
+        description: 'Qumulo, Inc. (Booth 4227)'
+        vid: 401
+        max_hosts: 100
+        proactive_arp_limit: 2052
+        proactive_nd_limit: 2052
+        faucet_mac: '0e:00:00:00:04:01'
+        faucet_vips:
+            - '192.0.200.161/27'

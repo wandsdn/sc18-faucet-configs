@@ -1,0 +1,222 @@
+---
+version: 2
+
+dps:
+    'dnoc1034-faucet':
+        dp_id: 0xe01aea43e46f
+        hardware: 'Allied-Telesis'
+        drop_spoofed_faucet_mac: false
+        arp_neighbor_timeout: 300
+        ignore_learn_ins: 0
+        lacp_timeout: 60
+        metrics_rate_limit_sec: 5
+        nd_neighbor_timeout: 300
+        timeout: 900
+        interfaces:
+            1:
+                name: '1'
+                description: 'Xilinx (Booth 927)'
+                native_vlan: '927-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            2:
+                name: '2'
+                description: 'Georgia Institute of Technology (Booth 1217)'
+                native_vlan: '1217-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            101:
+                description: 'to noc-faucet port 18'
+                tagged_vlans: ['927-A-l2', '1217-A-l2']
+                max_hosts: 2048
+                acl_in: protect_from_core
+    'dnoc2316-faucet':
+        dp_id: 0x78725d1b2ae0
+        hardware: 'CiscoC9K'
+        drop_spoofed_faucet_mac: false
+        arp_neighbor_timeout: 300
+        ignore_learn_ins: 0
+        lacp_timeout: 60
+        metrics_rate_limit_sec: 5
+        nd_neighbor_timeout: 300
+        timeout: 900
+        table_sizes:
+            eth_dst: 1024
+            eth_src: 1024
+            flood: 512
+            port_acl: 256
+            vlan: 512
+        interfaces:
+            1:
+                name: '1'
+                description: 'Penguin Computing (Booth 1608)'
+                native_vlan: '1608-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            2:
+                name: '2'
+                description: 'Arista Networks (Booth 2022)'
+                native_vlan: '2022-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            3:
+                name: '3'
+                description: 'Cray Inc. (Booth 2413)'
+                native_vlan: '2413-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            4:
+                name: '4'
+                description: 'HPE (Booth 2429)'
+                native_vlan: '2429-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            5:
+                name: '5'
+                description: 'Bright Computing (Booth 3025)'
+                native_vlan: '3025-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            6:
+                name: '6'
+                description: 'Mellanox Technologies (Booth 3207)'
+                native_vlan: '3207-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            12:
+                name: '12'
+                description: 'Google (Booth 1604)'
+                native_vlan: '1604-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            13:
+                name: '13'
+                description: 'University of Utah (Booth 1828)'
+                native_vlan: '1828-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            14:
+                name: '14'
+                description: 'Cisco Systems (Booth 2803)'
+                native_vlan: '2803-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            52:
+                description: 'to noc-faucet port 6'
+                tagged_vlans: ['1604-A-l2', '1608-A-l2', '1828-A-l2', '2022-A-l2', '2413-A-l2', '2429-A-l2', '2803-A-l2', '3025-A-l2', '3207-A-l2']
+                max_hosts: 2048
+                acl_in: protect_from_core
+    'dnoc2644-faucet':
+        dp_id: 0xe01aea2a4f5a
+        hardware: 'Allied-Telesis'
+        drop_spoofed_faucet_mac: false
+        arp_neighbor_timeout: 300
+        ignore_learn_ins: 0
+        lacp_timeout: 60
+        metrics_rate_limit_sec: 5
+        nd_neighbor_timeout: 300
+        timeout: 900
+        interfaces:
+            101:
+                name: '101'
+                description: 'Corsa Technology (Booth 3043)'
+                native_vlan: '3043-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            201:
+                name: '201'
+                description: 'Department of Energy (Booth 2433)'
+                native_vlan: '2433-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            501:
+                name: '501'
+                description: 'CIENA (Booth 2847)'
+                native_vlan: '2847-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            601:
+                description: 'to noc-faucet port 7'
+                tagged_vlans: ['2433-A-l2', '2847-A-l2', '3043-A-l2']
+                max_hosts: 2048
+                acl_in: protect_from_core
+    'dnoc4026-faucet':
+        dp_id: 0x223d5a04e9
+        hardware: 'GenericTFM'
+        drop_spoofed_faucet_mac: false
+        arp_neighbor_timeout: 300
+        ignore_learn_ins: 0
+        lacp_timeout: 60
+        metrics_rate_limit_sec: 5
+        nd_neighbor_timeout: 300
+        timeout: 900
+        interfaces:
+            3:
+                name: '3'
+                description: 'Lenovo (United States) Inc. (Booth 3617)'
+                native_vlan: '3617-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            4:
+                name: '4'
+                description: 'NCSA (Booth 3635)'
+                native_vlan: '3635-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            5:
+                name: '5'
+                description: 'SCinet (Booth 3651)'
+                native_vlan: '3651-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            6:
+                name: '6'
+                description: 'Globus (Booth 4201)'
+                native_vlan: '4201-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            7:
+                name: '7'
+                description: 'Qumulo, Inc. (Booth 4227)'
+                native_vlan: '4227-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            12:
+                name: '12'
+                description: 'Texas Advanced Computing Center (Booth 3707)'
+                native_vlan: '3707-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            1:
+                description: 'to noc-faucet port 15'
+                tagged_vlans: ['3617-A-l2', '3635-A-l2', '3651-A-l2', '3707-A-l2', '4201-A-l2', '4227-A-l2']
+                max_hosts: 2048
+                acl_in: protect_from_core
+    'dnoc420-faucet':
+        dp_id: 0x78725df42c00
+        hardware: 'CiscoC9K'
+        drop_spoofed_faucet_mac: false
+        arp_neighbor_timeout: 300
+        ignore_learn_ins: 0
+        lacp_timeout: 60
+        metrics_rate_limit_sec: 5
+        nd_neighbor_timeout: 300
+        timeout: 900
+        table_sizes:
+            eth_dst: 1024
+            eth_src: 1024
+            flood: 512
+            port_acl: 256
+            vlan: 512
+        interfaces:
+            2:
+                name: '2'
+                description: 'Clemson University (Booth 227)'
+                native_vlan: '227-A-l2'
+                max_hosts: 100
+                acl_in: protect_from_access
+            1:
+                description: 'to noc-faucet port 1'
+                tagged_vlans: ['227-A-l2']
+                max_hosts: 2048
+                acl_in: protect_from_core

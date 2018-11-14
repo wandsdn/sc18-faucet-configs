@@ -1,0 +1,11 @@
+---
+version: 2
+
+include:
+    - common/acls.yaml
+    - l3/vlans.yaml
+    - l3/datapaths.yaml
+
+routers:
+    router-scinet:
+        vlans: ['227-A-l3', '927-A-l3', '1217-A-l3', '1604-A-l3', '1608-A-l3', '1828-A-l3', '2022-A-l3', '2413-A-l3', '2429-A-l3', '2433-A-l3', '2803-A-l3', '2847-A-l3', '3025-A-l3', '3043-A-l3', '3207-A-l3', '3617-A-l3', '3635-A-l3', '3651-A-l3', '3707-A-l3', '4201-A-l3', '4227-A-l3', 'bird', 'noc-rtr-1', 'noc-rtr-2']

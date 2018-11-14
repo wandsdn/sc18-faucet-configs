@@ -1,0 +1,68 @@
+---
+version: 2
+
+dps:
+    noc-faucet:
+        dp_id: 0x6cec5a085e67
+        hardware: 'Generic'
+        global_vlan: 4089
+        idle_dst: false
+        arp_neighbor_timeout: 300
+        ignore_learn_ins: 0
+        lacp_timeout: 60
+        metrics_rate_limit_sec: 5
+        nd_neighbor_timeout: 300
+        timeout: 900
+        interfaces:
+            1:
+                description: 'to dnoc420-faucet port 1'
+                tagged_vlans: ['227-A-l3']
+                hairpin_unicast: true
+                max_hosts: 2048
+            6:
+                description: 'to dnoc2316-faucet port 52'
+                tagged_vlans: ['1604-A-l3', '1608-A-l3', '1828-A-l3', '2022-A-l3', '2413-A-l3', '2429-A-l3', '2803-A-l3', '3025-A-l3', '3207-A-l3']
+                hairpin_unicast: true
+                max_hosts: 2048
+            7:
+                description: 'to dnoc2644-faucet port 601'
+                tagged_vlans: ['2433-A-l3', '2847-A-l3', '3043-A-l3']
+                hairpin_unicast: true
+                max_hosts: 2048
+            10:
+                description: 'to noc-rtr-2 port Hu0/0/0/8'
+                tagged_vlans: ['noc-rtr-2']
+                max_hosts: 4096
+                lacp: 4
+            12:
+                description: 'to noc-rtr-2 port Hu0/2/0/8'
+                tagged_vlans: ['noc-rtr-2']
+                max_hosts: 4096
+                lacp: 4
+            13:
+                description: 'to nfv port enp3s0'
+                tagged_vlans: ['227-A-l3', '927-A-l3', '1217-A-l3', '1604-A-l3', '1608-A-l3', '1828-A-l3', '2022-A-l3', '2413-A-l3', '2429-A-l3', '2433-A-l3', '2803-A-l3', '2847-A-l3', '3025-A-l3', '3043-A-l3', '3207-A-l3', '3617-A-l3', '3635-A-l3', '3651-A-l3', '3707-A-l3', '4201-A-l3', '4227-A-l3', 'bird', 'noc-rtr-1', 'noc-rtr-2']
+                max_hosts: 512
+            14:
+                description: 'to poseidon port 1'
+                mirror: [1, 6, 7, 15, 18]
+            15:
+                description: 'to dnoc4026-faucet port 1'
+                tagged_vlans: ['3617-A-l3', '3635-A-l3', '3651-A-l3', '3707-A-l3', '4201-A-l3', '4227-A-l3']
+                hairpin_unicast: true
+                max_hosts: 2048
+            18:
+                description: 'to dnoc1034-faucet port 101'
+                tagged_vlans: ['927-A-l3', '1217-A-l3']
+                hairpin_unicast: true
+                max_hosts: 2048
+            21:
+                description: 'to noc-rtr-1 port et-0/2/0'
+                tagged_vlans: ['noc-rtr-1']
+                max_hosts: 4096
+                lacp: 9
+            11:
+                description: 'to noc-rtr-1 port et-2/2/0'
+                tagged_vlans: ['noc-rtr-1']
+                max_hosts: 4096
+                lacp: 9
